@@ -50,7 +50,7 @@
 import Cell from './Cell.vue';
 
 export default {
-  name: 'Table',
+  name: 'TableComponent',
   props: {
     header: {
       type: Array,

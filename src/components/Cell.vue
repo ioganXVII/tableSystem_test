@@ -18,13 +18,13 @@
 import Progress from './Progress.vue';
 
 export default {
-  name: 'Cell',
+  name: 'CellComponent',
   components: {
     Progress,
   },
   props: {
     data: {
-      type: String | Number,
+      type: [String, Number],
       required: true,
     },
     type: {
@@ -46,13 +46,20 @@ export default {
       const correct = ['subjects-ru', 'subjects-math', 'subjects-cs'].some(
         (item) => item === this.type,
       );
+
       if (correct) {
         let style = 'cell__text';
-        style += this.data >= 3
-          ? this.data >= 4 ? ` ${style}_green` : ` ${style}_orange`
-          : ` ${style}_red`;
+        if (this.data >= 4) {
+          style += ` ${style}_green`;
+        } else if (this.data >= 3) {
+          style += ` ${style}_orange`;
+        } else {
+          style += ` ${style}_red`;
+        }
+
         return style;
       }
+      return '';
     },
   },
 };

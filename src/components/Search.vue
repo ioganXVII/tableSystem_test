@@ -3,6 +3,7 @@
     <div
       class="search"
       @click="setFocus"
+      @keypress="setFocus"
      >
       <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="7" cy="7" r="6.5" stroke="#006CFE"/>
@@ -13,6 +14,7 @@
         ref="input"
         type="text"
         placeholder="Поиск"
+        aria-label="Поиск заявления"
         @input="search($event.target.value)"
       />
     </div>
@@ -21,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Search',
+  name: 'SearchComponent',
   methods: {
     setFocus() {
       this.$refs.input.focus();

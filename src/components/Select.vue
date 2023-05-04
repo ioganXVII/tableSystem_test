@@ -4,6 +4,7 @@
       ref="select"
       class="select__input"
       :value="value"
+      aria-label="Выбор поля сортировки"
       @change="changeValue($event.target.value)"
     >
       <option
@@ -25,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Select',
+  name: 'SelectComponent',
   props: {
     value: {
       type: String,

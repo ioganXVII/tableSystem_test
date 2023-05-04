@@ -306,17 +306,21 @@ export default {
       this.isMobile = window.innerWidth <= 425;
     },
     setProcentValue() {
-      this.data.forEach((item) => {
+      this.data = this.data.map((item) => {
+        const newItem = item;
         let procent = 0;
-        item.subjects.forEach((obj) => procent += obj.score * 6.66);
-        item.procent = Math.round(procent);
+        newItem.subjects.forEach((obj) => { procent += obj.score * 6.66; });
+        newItem.procent = Math.round(procent);
+        return newItem;
       });
     },
     setSumValue() {
-      this.data.forEach((item) => {
+      this.data = this.data.map((item) => {
+        const newItem = item;
         let sum = 0;
-        item.subjects.forEach((item) => sum += parseFloat(item.score));
-        item.sum = sum;
+        newItem.subjects.forEach((subject) => { sum += parseFloat(subject.score); });
+        newItem.sum = sum;
+        return newItem;
       });
     },
     changeSearchText(val) {
@@ -357,6 +361,8 @@ export default {
         case 'DESC':
           if (valueA > valueB) return -1;
           if (valueA < valueB) return 1;
+          return 0;
+        default:
           return 0;
       }
     },

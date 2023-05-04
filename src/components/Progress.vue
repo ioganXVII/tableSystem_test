@@ -18,8 +18,15 @@
   >
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" :data-value="procent">
       <circle r="45" cx="50" cy="50" />
-      <path ref="progress" class="meter" d="M5,50a45,45 0 1,0 90,0a45,45 0 1,0 -90,0" stroke-linecap="round"
-        stroke-linejoin="round" stroke-dashoffset="282.78302001953125" stroke-dasharray="282.78302001953125" />
+      <path
+        ref="progress"
+        class="meter"
+        d="M5,50a45,45 0 1,0 90,0a45,45 0 1,0 -90,0"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dashoffset="282.78302001953125"
+        stroke-dasharray="282.78302001953125"
+      />
       <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="20"></text>
     </svg>
   </div>
@@ -28,10 +35,10 @@
 <script>
 
 export default {
-  name: 'Progress',
+  name: 'ProgressComponent',
   props: {
     procent: {
-      type: String | Number,
+      type: [String, Number],
       default: 0,
     },
     isMobile: {

@@ -6,6 +6,7 @@
       <Select
         :variants="fields"
         :value="sortBy.field"
+        aria-label="Выбор поля сортировки"
         @change="sort"
       />
       <div>
@@ -60,7 +61,7 @@ import SortButton from './SortButton.vue';
 import Progress from './Progress.vue';
 
 export default {
-  name: 'MobileTable',
+  name: 'MobileTableComponent',
   props: {
     data: {
       type: Array,
@@ -119,11 +120,17 @@ export default {
 
       if (correct) {
         let style = 'mobile-table__text';
-        style += value >= 3
-          ? value >= 4 ? ` ${style}_green` : ` ${style}_orange`
-          : ` ${style}_red`;
+        if (value >= 4) {
+          style += ` ${style}_green`;
+        } else if (value >= 3) {
+          style += ` ${style}_orange`;
+        } else {
+          style += ` ${style}_red`;
+        }
+
         return style;
       }
+      return '';
     },
   },
 };
