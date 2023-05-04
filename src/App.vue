@@ -379,7 +379,6 @@ export default {
       this.sort(this.sortBy.type, field);
     },
     sort(type, field) {
-      console.log(type, field);
       if (type !== 'none') {
         this.changeTableData([...this.data].sort((a, b) => this.sortValues(field, type, a, b)));
       } else {

@@ -93,7 +93,6 @@ export default {
       return value === 'procent';
     },
     sort(value) {
-      console.log(value);
       this.$emit('sort', value);
     },
     changeSort(type) {

@@ -49,7 +49,6 @@ export default {
 
 .select
   &__wrapper
-    padding-left: 5px
     display: flex
     justify-content: center
     position: relative
@@ -79,12 +78,16 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-@media (max-width: 375px)
+@media (max-width: 425px)
   .select
     &__input
       padding-right: 90px
-@media (max-width: 320px)
+@media (max-width: 375px)
   .select
     &__input
       padding-right: 35px
+@media (max-width: 320px)
+  .select
+    &__input
+      padding-right: 15px
 </style>
