@@ -73,13 +73,17 @@ export default {
   &__text
     width: 40px
 progress
+  background-color: $blue-light
+  border: none
   margin-left: 4px
   border-radius: 15px
-  width: 140px
+  max-width: 70%
   height: 4px
   &[value^="3"]:not([value="3"]),
   &[value^="4"]:not([value="4"])
     &::-webkit-progress-value
+      background-color: $orange
+    &::-moz-progress-bar
       background-color: $orange
   &[value^="5"]:not([value="5"]),
   &[value^="6"]:not([value="6"]),
@@ -88,6 +92,8 @@ progress
   &[value^="9"]:not([value="9"]),
   &[value="100"]
     &::-webkit-progress-value
+      background-color: $green
+    &::-moz-progress-bar
       background-color: $green
 
   &::-webkit-progress-bar
@@ -99,8 +105,7 @@ progress
     background-color: $red
 
   &::-moz-progress-bar
-    background-color: field
-    border-radius: 7px
+    background-color: $red
 
 svg
   display: inline-flex
