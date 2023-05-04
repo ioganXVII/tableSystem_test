@@ -1,4 +1,6 @@
 # table_system
+## Github pages
+https://ioganxvii.github.io/tableSystem_test/
 
 ## Project setup
 ```
